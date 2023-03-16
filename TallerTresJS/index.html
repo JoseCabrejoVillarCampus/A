@@ -19,6 +19,7 @@
         <legend>Datos del roadmap de CAMPUS:</legend>
         <form id="myFormularioRoadmap">
             <select name="sede"></select><br>
+            <input type="text" name="asignatura" placeholder="Asignatura"><br>
             <input type="text" name="numeroCreditos" placeholder="Creditos de la Asignatura"><br>
             <input type="text" name="tiempo" placeholder="Tiempo de estudio"><br>
             <input type="text" name="numeroAsignaturas" placeholder="Numero de asignaturas dentro del roadmap"><br>
@@ -26,9 +27,11 @@
         </form>
     </fieldset>
     <fieldset>
-        <legend>Niveles CAMPUS:</legend>
+        <legend>Niveles CAMPUS:</legend> 
         <form id="myFormularioNiveles">
             <select name="sede" id="Sniveles"></select><br>
+            <input type="text" name="team" placeholder="Team"><br>
+            <input type="text" name="nivel" placeholder="Nivel"><br>
             <input type="text" name="preRequisito" placeholder="Pre-Requisito"><br>
             <input type="text" name="tecnologia" placeholder="A que tecnologia pertenece"><br>
             <input type="text" name="caracter" placeholder="Electiva u Obligatoria"><br>
@@ -38,13 +41,17 @@
     <fieldset>
         <legend>Datos de los campers CAMPUS:</legend>
         <form id="myFormularioCampers">
-            <select name="sede"></select><br>
+            <select name="sede" id="Scamper"></select><br>
             <input type="text" name="nombre" placeholder="Ingrese el nombre del camper"><br>
             <input type="tel" name="telefono" placeholder="Ingrese el telefono del camper"><br>
             <input type="email" name="email" placeholder="Ingrese el email del camper"><br>
-            <input type="text" name="team" placeholder="Ingrese el team del camper"><br>
+            <legend>Team</legend>
+            <select name="team">
+                <option value="value1">Artemis</option>
+                <option value="value2" selected>sputnick</option>
+                <option value="value3">Apolo</option>
+              </select><br>
             <input type="text" name="hora" placeholder="Ingrese el horario de ser y de ingles"><br>
-            <select name="myFormularioNiveles"></select><br>
             <input type="text" name="barrio" placeholder="Ingrese el barrio del camper"><br>
             <input type="text" name="transporte" placeholder="Ingrese el medio de transporte del camper"><br>
             <input type="submit" value="Guardar">
@@ -53,11 +60,16 @@
     <fieldset>
         <legend>Datos de los trainers CAMPUS:</legend>
         <form id="myFormularioTrainers">
-            <select name="sede"></select><br>
+            <select name="sede" id="Strainer"></select><br>
             <input type="text" name="nombre" placeholder="Ingrese el nombre del trainer"><br>
             <input type="tel" name="telefono" placeholder="Ingrese el telefono del trainer"><br>
             <input type="email" name="email" placeholder="Ingrese el email del trainer"><br>
-            <input type="text" name="team" placeholder="Ingrese el team del trainer"><br>
+            <legend>Team</legend>
+            <select name="team">
+                <option value="value1">Artemis</option>
+                <option value="value2" selected>sputnick</option>
+                <option value="value3">Apolo</option>
+              </select><br>
             <input type="submit" value="Guardar">
         </form>
     </fieldset>
