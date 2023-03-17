@@ -9,80 +9,96 @@
 </head>
 <body>
     <fieldset>
-        <legend>Datos de contacto de las sedes de CAMPUS:</legend>
+        <legend>Datos de contacto de las sedes de CAMPUS:</legend><br>
         <form id="myFormularioCampus">
             <input type="text" name="nombreSede" placeholder="Nombre de la sedes"><br><br>
             <input type="submit" value="Guardar">
         </form>
-    </fieldset>
+    </fieldset><br>
     <fieldset>
-        <legend>Niveles CAMPUS:</legend> 
+        <legend>Niveles CAMPUS:</legend><br> 
         <form id="myFormularioNiveles">
-            <select name="sedeNivel" id="Sniveles"></select><br>
-            <select name="team">
-                <option value="Team1">Team 1</option>
-                <option value="Team2" selected>Team 2</option>
-              </select><br>
+            <select name="sedeNivel" id="Sniveles"><option value="null" selected>Ciudad</option></select>
             <select name="preRequisito">
-                <option value="pr">Ninguno</option>
-                <option value="pr1">Nivel uno</option>
-                <option value="pr2" selected>nivel dos</option>
-              </select><br>
+                <option value="null" selected>Nivel</option>
+                <option value="pr1">Nivel Aprendiz</option>
+                <option value="pr2">Nivel Intermedio</option>
+                <option value="pr2">Nivel Avanzado</option>
+              </select>
               <select name="nivelEstudio">
+                <option value="null" selected>Tipo Formacion</option>
                 <option value="tec">Tecnico</option>
                 <option value="tecn">Tecnologia</option>
-                <option value="pro" selected>Profesional</option>
-              </select><br>
-              <select name="caracter">
-                <option value="obli">Obligatoria</option>
-                <option value="elect" selected>Electiva</option>
-              </select><br>
-            <select name="Salon">
-                <option value="Apolo">Apolo</option>
-                <option value="Artemis" selected>Artemis</option>
-                <option value="Sputnuck">Sputnuck</option>
-              </select><br>
+                <option value="pro">Profesional</option>
+              </select><br><br>
             <input type="submit" value="Guardar">
         </form>
-    </fieldset>
+    </fieldset><br>
     <fieldset>
-        <legend>Datos del roadmap de CAMPUS:</legend>
+        <legend>Datos del roadmap de CAMPUS:</legend><br>
         <form id="myFormularioRoadmap">
-            <select name="sedeRoadmap"></select><br>
-            <input type="text" name="asignatura" placeholder="Asignatura"><br>
-            <input type="text" name="numeroCreditos" placeholder="Creditos de la Asignatura"><br>
-            <input type="text" name="tiempo" placeholder="Tiempo de estudio"><br>
-            <input type="text" name="numeroAsignaturas" placeholder="Numero de asignaturas dentro del roadmap"><br>
-            <input type="text" name="salon" placeholder="Salon"><br>
+            <select name="sedeRoadmap"><option value="null" selected>Ciudad</option></select><br><br>
+            <input type="text" name="asignatura" placeholder="Asignatura">
+            <input type="text" name="numeroCreditos" placeholder="Creditos de la Asignatura">
+            <select name="caracter">
+                <option value="null" selected>Caracter</option>
+                <option value="obli">Obligatoria</option>
+                <option value="elect">Electiva</option>
+              </select>
+              <select name="Salon">
+                <option value="null" selected>Salon</option>
+                <option value="Apolo">Apolo</option>
+                <option value="Artemis">Artemis</option>
+                <option value="Sputnuck">Sputnuck</option>
+                <option value="Auditorio">Auditorio</option>
+                <option value="Review">Review</option>
+            </select><br><br>
+            <input type="text" name="tiempo" placeholder="Tiempo de estudio"><br><br>
             <input type="submit" value="Guardar">
         </form>
-    </fieldset>
+    </fieldset><br>
     <fieldset>
-        <legend>Datos de los campers CAMPUS:</legend>
+        <legend>Datos de los campers CAMPUS:</legend><br>
         <form id="myFormularioCampers">
-            <select name="sedeCampers" id="Scamper"></select><br>
-            <legend>Team del Camper:</legend>
-            <select name="nivelCampers" id="Scampernivel">ciudad</select><br>
-            <input type="text" name="nombre" placeholder="Ingrese el nombre del camper"><br>
-            <input type="tel" name="telefono" placeholder="Ingrese el telefono del camper"><br>
-            <input type="email" name="email" placeholder="Ingrese el email del camper"><br>
-            <input type="text" name="team" placeholder="Ingrese el team del camper"><br>
-            <input type="text" name="hora" placeholder="Ingrese el horario de ser y de ingles"><br>
-            <input type="text" name="barrio" placeholder="Ingrese el barrio del camper"><br>
-            <input type="text" name="transporte" placeholder="Ingrese el medio de transporte del camper"><br>
+            <select name="sedeCampers" id="Scamper"><option value="null" selected>Ciudad</option></select>
+            <select name="nivelCampers" id="Scampernivel"><option value="null" selected>Nivel</option></select><br><br>
+            <input type="text" name="nombre" placeholder="Ingrese el nombre del camper">
+            <input type="tel" name="telefono" placeholder="Ingrese el telefono del camper">
+            <input type="email" name="email" placeholder="Ingrese el email del camper"><br><br>
+            <select name="team">
+                <option value="null" selected>Team</option>
+                <option value="Team1">Team 1</option>
+                <option value="Team2">Team 2</option>
+              </select>
+            <select name="horaingles">
+                <option value="null" selected>Horario Ingles</option>
+                <option value="Team1">10am a 11am</option>
+                <option value="Team2">9am a 10am</option>
+              </select>
+            <select name="horaser">
+                <option value="null" selected>horario Ser</option>
+                <option value="Team1">8am a 9 am</option>
+                <option value="Team2">11am a 12pm</option>
+              </select><br><br>
+            <input type="text" name="barrio" placeholder="Ingrese el barrio del camper">
+            <input type="text" name="transporte" placeholder="Ingrese el medio de transporte del camper"><br><br>
             <input type="submit" value="Guardar">
         </form>
-    </fieldset>
+    </fieldset><br>
     <fieldset>
-        <legend>Datos de los trainers CAMPUS:</legend>
+        <legend>Datos de los trainers CAMPUS:</legend><br>
         <form id="myFormularioTrainers">
-            <select name="sedeTrainers" id="Strainer"></select><br>
-            <legend>Team del Trainer:</legend>
-            <select name="nivelCampers" id="Scampernivel">ciudad</select><br>
-            <input type="text" name="nombre" placeholder="Ingrese el nombre del trainer"><br>
-            <input type="tel" name="telefono" placeholder="Ingrese el telefono del trainer"><br>
-            <input type="email" name="email" placeholder="Ingrese el email del trainer"><br>
-            <input type="text" name="team" placeholder="Ingrese el team del trainer"><br>
+            <select name="sedeTrainers" id="Strainer"><option value="null" selected>Ciudad</option></select>
+            <select name="nivelCampers" id="Scampernivel"><option value="null" selected>Nivel</option></select>
+            <select name="team">
+                <option value="null" selected>Team</option>
+                <option value="Team1">Team 1</option>
+                <option value="Team2">Team 2</option>
+              </select><br><br>
+            <input type="text" name="nombre" placeholder="Ingrese el nombre del trainer">
+            <input type="tel" name="telefono" placeholder="Ingrese el telefono del trainer"><br><br>
+            <input type="email" name="email" placeholder="Ingrese el email del trainer">
+            <input type="text" name="team" placeholder="Ingrese el team del trainer"><br><br>
             <input type="submit" value="Guardar">
         </form>
     </fieldset>

@@ -23,71 +23,76 @@ let myFormularioRoadmap = document.querySelector("#myFormularioRoadmap");
 let campus = {};
 
 
-let listar= (p1,p2)=>{
-    let opciones = document.querySelector(p1);
-    opciones.innerHTML = null; 
-    for (let [val, id] of Object.entries(p2)) {
-        opciones.insertAdjacentHTML("beforeend", `
-            <option value="${id}">${id}</option>
-        `);
-    }
-};
+// let listar= (p1,p2)=>{
+//     let opciones = document.querySelector(p1);
+//     opciones.innerHTML = null; 
+//     for (let [val, id] of Object.entries(p2)) {
+//         opciones.insertAdjacentHTML("beforeend", `
+//             <option value="${id}">${id}</option>
+//         `);
+//     }
+// };
 
 
 myFormularioCampus.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target))
-    campus[`${data.nombreSede}`] = {Roadmap: [], 
-        Niveles: [], 
-        Camper: [], 
-        Trainers: []};
-    listar('[name="sedeRoadmap"]', [data.nombreSede]);
-    listar('[name="sedeNivel"]', [data.nombreSede]);
-    listar('[name="sedeCampers"]', [data.nombreSede]);
-    listar('[name="sedeTrainers"]', [data.nombreSede]);
+    campus[`${data.nombreSede}`] = {Niveles: [], Roadmap: [],  Camper: [], Trainers: []};
+    listaSedes();
+    listaSedesN();
+    listaSedesC();
+    listaSedesT();
     myFormularioCampus.reset();
+    // listar('[name="sedeRoadmap"]', [data.nombreSede]);
+    // listar('[name="sedeNivel"]', [data.nombreSede]);
+    // listar('[name="sedeCampers"]', [data.nombreSede]);
+    // listar('[name="sedeTrainers"]', [data.nombreSede]);
+    
 });
 
 
 
-/* 
 let listaSedes = ()=>{
-    let opciones = document.querySelector("[name='sede']");
+    let opciones = document.querySelector("[name='sedeNivel']");
     opciones.innerHTML = null;
     for (let [val, id] of Object.entries(campus)) {
         opciones.insertAdjacentHTML("beforeend", `
             <option value="${val}">${val}</option>
         `);
     }
-};
- */
+}
  
+myFormularioNiveles.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target));
+    console.log(data);
+    let sedeNivel = data.sedeNivel;
+    delete data.sedeNivel;
+    campus[`${sedeNivel}`]["Niveles"].unshift(data); 
+    listaSedes('[name="nivelCampers"]', [data.nivel]);
+    myFormularioNiveles.reset();
+})
+
+let listaSedesN = ()=>{
+    let opciones = document.querySelector("[name='sedeRoadmap']");
+    opciones.innerHTML = null;
+    for (let [val, id] of Object.entries(campus)) {
+        opciones.insertAdjacentHTML("beforeend", `
+            <option value="${val}">${val}</option>
+        `);
+    }
+}
+
+
 myFormularioRoadmap.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     console.log(data);
-    let sede = data.sede;
-    delete data.sede;
-    campus[`${sede}`]["Roadmap"].unshift(data);
+    let sedeRoadmap = data.sedeRoadmap;
+    delete data.sedeRoadmap;
+    campus[`${sedeRoadmap}`]["Roadmap"].unshift(data);
     myFormularioRoadmap.reset();
 });
-
-
-
-/* const valorSelec = document.querySelector('#Sniveles').value;
-console.log(valorSelec);  */
-
-
-myFormularioNiveles.addEventListener("submit", (e)=>{
-    e.preventDefault();
-    let data = Object.fromEntries(new FormData(e.target));
-    
-    /* campus[`${sede}`]["Niveles"].unshift(data); */
-    listar('[name="nivelCampers"]', [data.nivel]);
-    listar('[name="nivelCampers"]', [data.team]);
-    myFormularioNiveles.reset();
-})
-
 /* let listaSedesC= ()=>{
     let opciones = document.querySelector("#Scamper");
     opciones.innerHTML = null; 
@@ -97,14 +102,22 @@ myFormularioNiveles.addEventListener("submit", (e)=>{
         `);
     }
 } */
-
+let listaSedesC = ()=>{
+    let opciones = document.querySelector("[name='sedeCampers']");
+    opciones.innerHTML = null;
+    for (let [val, id] of Object.entries(campus)) {
+        opciones.insertAdjacentHTML("beforeend", `
+            <option value="${val}">${val}</option>
+        `);
+    }
+}
 myFormularioCampers.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     console.log(data);
-   
-    campus[`${sede}`]["Camper"].unshift(data);
-    console.log(data);
+    let sedeCampers = data.sedeCampers;
+    delete data.sedeCampers;
+    campus[`${sedeCampers}`]["Camper"].unshift(data);
     /* listar('[name="nivelCampers"]', Object.keys(campus)); */
     myFormularioCampers.reset();
 })
@@ -118,13 +131,22 @@ myFormularioCampers.addEventListener("submit", (e)=>{
         `);
     }
 } */
-
+let listaSedesT = ()=>{
+    let opciones = document.querySelector("[name='sedeTrainers']");
+    opciones.innerHTML = null;
+    for (let [val, id] of Object.entries(campus)) {
+        opciones.insertAdjacentHTML("beforeend", `
+            <option value="${val}">${val}</option>
+        `);
+    }
+}
 myFormularioTrainers.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     console.log(data);
-    let sede = data.sede;
-    delete data.sede;
-    campus[`${sede}`]["Trainers"].unshift(data);
+    let sedeTrainers = data.sedeTrainers;
+    delete data.sedeTrainers;
+    campus[`${sedeTrainers}`]["Trainers"].unshift(data);
     myFormularioTrainers.reset();
 }) 
+console.log(campus);
