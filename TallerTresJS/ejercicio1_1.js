@@ -65,7 +65,6 @@ let listaSedes = ()=>{
 myFormularioNiveles.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    console.log(data);
     let sedeNivel = data.sedeNivel;
     delete data.sedeNivel;
     campus[`${sedeNivel}`]["Niveles"].unshift(data); 
@@ -87,7 +86,6 @@ let listaSedesN = ()=>{
 myFormularioRoadmap.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    console.log(data);
     let sedeRoadmap = data.sedeRoadmap;
     delete data.sedeRoadmap;
     campus[`${sedeRoadmap}`]["Roadmap"].unshift(data);
@@ -106,7 +104,6 @@ let listaSedesC = ()=>{
 myFormularioCampers.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    console.log(data);
     let sedeCampers = data.sedeCampers;
     delete data.sedeCampers;
     campus[`${sedeCampers}`]["Camper"].unshift(data);
@@ -128,10 +125,15 @@ let listaSedesT = ()=>{
 myFormularioTrainers.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
-    console.log(data);
     let sedeTrainers = data.sedeTrainers;
     delete data.sedeTrainers;
     campus[`${sedeTrainers}`]["Trainers"].unshift(data);
     myFormularioTrainers.reset();
 }) 
 console.log(campus);
+
+/* const [Niveles, Roadmap,  Camper, Trainers] = campus;
+console.log(Niveles); 
+console.log(Roadmap); 
+console.log(Camper);
+console.log(Trainers); */

@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    background-color: whitesmoke;
+    color: black;
+}
+#formulario{
+    margin-top: 1%;
+    display: grid;
+    justify-content: center;
+
+}
+fieldset{
+    margin-top: 2%;
+}
