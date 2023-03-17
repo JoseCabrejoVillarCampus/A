@@ -37,6 +37,7 @@ let campus = {};
 myFormularioCampus.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target))
+    campus.
     campus[`${data.nombreSede}`] = {Niveles: [], Roadmap: [],  Camper: [], Trainers: []};
     listaSedes();
     listaSedesN();
@@ -69,7 +70,7 @@ myFormularioNiveles.addEventListener("submit", (e)=>{
     let sedeNivel = data.sedeNivel;
     delete data.sedeNivel;
     campus[`${sedeNivel}`]["Niveles"].unshift(data); 
-    listaSedes('[name="nivelCampers"]', [data.nivel]);
+    /* listaSedesC('[name="nivelCampers"]', [data.nivel]); */
     myFormularioNiveles.reset();
 })
 
@@ -93,15 +94,7 @@ myFormularioRoadmap.addEventListener("submit", (e)=>{
     campus[`${sedeRoadmap}`]["Roadmap"].unshift(data);
     myFormularioRoadmap.reset();
 });
-/* let listaSedesC= ()=>{
-    let opciones = document.querySelector("#Scamper");
-    opciones.innerHTML = null; 
-    for (let [val, id] of Object.entries(campus)) {
-        opciones.insertAdjacentHTML("beforeend", `
-            <option value="${val}">${val}</option>
-        `);
-    }
-} */
+
 let listaSedesC = ()=>{
     let opciones = document.querySelector("[name='sedeCampers']");
     opciones.innerHTML = null;
@@ -118,19 +111,12 @@ myFormularioCampers.addEventListener("submit", (e)=>{
     let sedeCampers = data.sedeCampers;
     delete data.sedeCampers;
     campus[`${sedeCampers}`]["Camper"].unshift(data);
+
     /* listar('[name="nivelCampers"]', Object.keys(campus)); */
     myFormularioCampers.reset();
 })
 
-/* let listaSedesT= ()=>{
-    let opciones = document.querySelector("#Strainer");
-    opciones.innerHTML = null; 
-    for (let [val, id] of Object.entries(campus)) {
-        opciones.insertAdjacentHTML("beforeend", `
-            <option value="${val}">${val}</option>
-        `);
-    }
-} */
+
 let listaSedesT = ()=>{
     let opciones = document.querySelector("[name='sedeTrainers']");
     opciones.innerHTML = null;
