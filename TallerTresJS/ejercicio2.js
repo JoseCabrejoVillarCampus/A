@@ -22,7 +22,15 @@ let listar= (p1,campus)=>{
         `);
     }
 };
-
+let listar1= (p1,p2)=>{
+    let opciones = document.querySelector(p1);
+    opciones.innerHTML = null; 
+    for (let [id, val] of Object.entries(p2)) {
+        opciones.insertAdjacentHTML("beforeend", `
+            <option value="${id}">${val}</option>
+        `);
+    }
+};
 myFormularioCampus.addEventListener("submit", (e)=>{
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target))
@@ -41,7 +49,10 @@ myFormularioNiveles.addEventListener("submit", (e)=>{
     let sedeNivel = data.sedeNivel;
     delete data.sedeNivel;
     campus[`${sedeNivel}`]["Niveles"].unshift(data); 
+    listar1('[name="nivelCamper"]',Object.keys(data));
+    listar1('[name="niveltrainer"]',Object.values(data));
     myFormularioNiveles.reset();
+    // console.log(data);
 })
 
 myFormularioRoadmap.addEventListener("submit", (e)=>{

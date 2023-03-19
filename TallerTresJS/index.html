@@ -13,7 +13,7 @@
 <body>
   <div class="container pb-4" id="formulario">
     <fieldset class="border border-primary px-2 py-2">
-      <legend >Datos de contacto de las sedes de CAMPUS:</legend><br>
+      <legend>Datos de contacto de las sedes de CAMPUS:</legend><br>
       <form id="myFormularioCampus">
           <!-- <input type="text" name="nombreSede" placeholder="Nombre de la Sede"> -->
           <select name="nombreSede">
@@ -47,24 +47,34 @@
           <input type="submit" value="Guardar">
       </form>
   </fieldset><br>
-  <fieldset class="border border-primary px-2 py-2">
+  <fieldset class="border border-primary px-2 py-2 ">
       <legend>Datos del roadmap de CAMPUS:</legend><br>
       <form id="myFormularioRoadmap">
           <select name="sedeRoadmap"><option value="null" selected>Ciudad</option></select><br><br>
           <input type="text" name="asignatura" placeholder="Asignatura">
-          <input type="text" name="numeroCreditos" placeholder="Creditos de la Asignatura">
+          <input type="text" name="numeroCreditos" placeholder="Numero de Creditos">
+          <select name="sandbox">
+            <option value="null" selected>Sandbox</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+          </select><br><br>
           <select name="caracter">
-              <option value="null" selected>Caracter</option>
-              <option value="Obligatoria">Obligatoria</option>
-              <option value="Electiva">Electiva</option>
-            </select>
-            <select name="Salon">
-              <option value="null" selected>Salon</option>
-              <option value="Apolo">Apolo</option>
-              <option value="Artemis">Artemis</option>
-              <option value="Sputnuck">Sputnuck</option>
-              <option value="Auditorio">Auditorio</option>
-              <option value="Review">Review</option>
+            <option value="null" selected>Caracter</option>
+            <option value="Obligatoria">Obligatoria</option>
+            <option value="Electiva">Electiva</option>
+          </select>
+          <select name="presencialidad">
+            <option value="null" selected>Presencialidad</option>
+            <option value="Prescencial">Prescencial</option>
+            <option value="Remota">Remota</option>
+          </select>
+          <select name="Salon">
+            <option value="null" selected>Salon</option>
+            <option value="Apolo">Apolo</option>
+            <option value="Artemis">Artemis</option>
+            <option value="Sputnuck">Sputnuck</option>
+            <option value="Auditorio">Auditorio</option>
+            <option value="Review">Review</option>
           </select><br><br>
           <input type="text" name="tiempo" placeholder="Tiempo de estudio"><br><br>
           <input type="submit" value="Guardar">
@@ -74,11 +84,11 @@
       <legend>Datos de los campers CAMPUS:</legend><br>
       <form id="myFormularioCampers">
           <select name="sedeCampers" id="Scamper"><option value="null" selected>Ciudad</option></select>
-          <select name="nivelCamper" id="nivelCamper"><option value="null" selected>Nivel</option></select>
-          <input type="text" name="nombre" placeholder="Ingrese el nombre del camper">
-          <input type="tel" name="telefono" placeholder="Ingrese el telefono del camper">
-          <input type="email" name="email" placeholder="Ingrese el email del camper"><br><br>
-          <select name="team">
+          <select name="nivelCamper" id="nivelCamper"><option value="null" selected>Nivel</option></select><br><br>
+          <input type="text" name="nombre" placeholder="Nombre del Camper">
+          <input type="tel" name="telefono" placeholder="Telefono del Camper">
+          <input type="email" name="email" placeholder="Email del Camper"><br><br>
+          <select name="teamCamper">
               <option value="null" selected>Team</option>
               <option value="Team 1">Team 1</option>
               <option value="Team 2">Team 2</option>
@@ -103,14 +113,17 @@
       <form id="myFormularioTrainers">
           <select name="sedeTrainers" id="Strainer"><option value="null" selected>Ciudad</option></select>
           <select name="niveltrainer"><option value="null" selected>Nivel</option></select>
-          <select name="team">
-              <option value="null" selected>Team</option>
-              <option value="Team1">Team 1</option>
-              <option value="Team2">Team 2</option>
-            </select><br><br>
-          <input type="text" name="nombre" placeholder="Ingrese el nombre del trainer">
-          <input type="tel" name="telefono" placeholder="Ingrese el telefono del trainer"><br><br>
-          <input type="email" name="email" placeholder="Ingrese el email del trainer"><br><br>
+          <select name="teamTrainer">
+            <option value="null" selected>Team</option>
+            <option value="Team1">Team 1</option>
+            <option value="Team2">Team 2</option>
+          </select><br><br>
+          <input type="text" name="nombre" placeholder="Nombre del Trainer">
+          <select name="asignaturaTrainer">
+            <option value="null" selected>Asignatura</option>
+          </select><br><br>
+          <input type="tel" name="telefono" placeholder="Telefono del Trainer">
+          <input type="email" name="email" placeholder="Email del Trainer"><br><br>
           <input type="submit" value="Guardar">
       </form>
   </fieldset>
